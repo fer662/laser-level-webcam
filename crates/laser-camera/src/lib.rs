@@ -11,7 +11,7 @@
 //! - `mf` (Windows): Media Foundation for the frames, with the DirectShow camera control and
 //!   video proc amp interfaces and the kernel-streaming power-line property for the controls.
 //! - `v4l2` (Linux): Video4Linux2, memory-mapped streaming and the node's controls.
-//! - `avf` (macOS): AVFoundation for the frames. macOS gives no camera controls.
+//! - `avf` (macOS): AVFoundation for frames and per-device auto/lock controls.
 //! - `web` (the browser): `getUserMedia`, opened with the asynchronous `web::open`.
 //!
 //! A source is used on the thread that opened it; [`capture`] runs one on its own thread.

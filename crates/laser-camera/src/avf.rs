@@ -2,9 +2,9 @@
 //!
 //! A camera is an `AVCaptureDevice` for video. The modes are its formats, each at the fastest and
 //! slowest ends of its frame rates. Frames come from an `AVCaptureVideoDataOutput` as bi-planar
-//! 4:2:0, so the luma is the first plane as it is: for a camera that sends YUV the luma is the
-//! camera's own, and only an MJPEG mode is decoded (by macOS) on the way. Supported exposure,
-//! focus and white-balance auto/lock modes are queried per device; numeric values are unavailable.
+//! 4:2:0, so the luma is copied from the first plane. This describes AVFoundation's output,
+//! not the USB transport encoding or raw sensor data. Supported exposure, focus and
+//! white-balance auto/lock modes are queried per device; numeric values are unavailable.
 #![allow(unsafe_code)]
 
 use std::sync::mpsc::{Receiver, RecvTimeoutError, SyncSender, sync_channel};
